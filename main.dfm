@@ -48,6 +48,7 @@ object Form2: TForm2
     Height = 25
     Caption = #352'ifrovat -->'
     TabOrder = 2
+    OnClick = BSifrovatClick
   end
   object BDesifrovat: TButton
     Left = 287
@@ -58,7 +59,7 @@ object Form2: TForm2
     TabOrder = 3
   end
   object MainMenu1: TMainMenu
-    Left = 248
+    Left = 288
     Top = 16
     object Soubor1: TMenuItem
       Caption = 'Soubor'
@@ -102,12 +103,12 @@ object Form2: TForm2
     end
   end
   object OpenDialog: TOpenDialog
-    Left = 280
+    Left = 328
     Top = 16
   end
   object SaveDialog: TSaveDialog
     DefaultExt = 'txt'
-    Left = 312
+    Left = 368
     Top = 16
   end
 end
