@@ -10,6 +10,8 @@
 #include <ExtCtrls.hpp>
 #include <Menus.hpp>
 #include <Dialogs.hpp>
+#include <string>
+using namespace std;
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
@@ -42,48 +44,34 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
 
-	AnsiString sifrovat(AnsiString klic, AnsiString nesifrovany_text){
-		int delka_n = nesifrovany_text.Length();
-		
-		char *znak_n = new char[delka_n];
-		znak_n = nesifrovany_text.c_str();
+	AnsiString sifrovat(string kl, string znak_n){
+		int delka_n = znak_n.length();
+		int delka_k = kl.length();
 
-		char *kl = new char[klic.Length()];
+		string sifrovane;
 
-        kl = klic.c_str();
-
-		char *znak_s = new char[delka_n];
-
-		delka_n--;
-
-		for(int i = 0; i < (klic.Length()); i++){
+		for(int i = 0; i < delka_k; i++){
 			if(kl[i] >= 'a' && kl[i] <= 'z')
 				kl[i] += 'A' - 'a';
 		}
-		
-		int j = 0,i = 0;
-
-		for(i = 0; i < delka_n+1; i++){
-
-			if(znak_n[i] >= 'a' && znak_n[i] <= 'z')
-				znak_n[i] += 'A' - 'a';
-
+		int j = 0;
+		for(int i = 0,j = 0; i < delka_n; i++){
+			char zn = znak_n[i];
+			
+			if(zn >= 'a' && zn <= 'z')
+				zn += 'A' - 'a';
+			  /*
 			if(znak_n[i] < 'A' || znak_n[i] > 'Z')
 				continue;
+				*/
 
-		  	znak_s[i] += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
+			sifrovane += (zn + kl[j] - 2*'A')% 26 + 'A';
 
-			if(j<klic.Length())
-				j++;
-			if(j==klic.Length())
-				j=0;    
-		
+		    j = (j+1)%delka_k;
+
 		}
-		
-	
-		AnsiString sifrovany_text = znak_s;
 
-		return sifrovany_text;
+		return sifrovane;
 	}
 };
 //---------------------------------------------------------------------------
