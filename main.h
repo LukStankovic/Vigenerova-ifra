@@ -49,14 +49,13 @@ public:		// User declarations
 		znak_n = nesifrovany_text.c_str();
 
 		char *kl = new char[klic.Length()];
+
         kl = klic.c_str();
 
 		char *znak_s = new char[delka_n];
 
 		delka_n--;
 
-
-	
 		for(int i = 0; i < (klic.Length()); i++){
 			if(kl[i] >= 'a' && kl[i] <= 'z')
 				kl[i] += 'A' - 'a';
@@ -74,7 +73,7 @@ public:		// User declarations
 
 		  	znak_s[i] += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
 
-			if(j<klic.Length())
+			if(j<=klic.Length())
 				j++;
 			if(j==klic.Length())
 				j=0;    

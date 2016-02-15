@@ -63,8 +63,7 @@ public:		// User declarations
 		}
 		
 		int j = 0,i = 0;
-		for(int k = 0; i < 2; k++){
-		i=0
+
 		for(i = 0; i < delka_n+1; i++){
 
 			if(znak_n[i] >= 'a' && znak_n[i] <= 'z')
@@ -82,7 +81,7 @@ public:		// User declarations
 		
 		}
 		
-		}
+	
 		AnsiString sifrovany_text = znak_s;
 
 		return sifrovany_text;

@@ -62,9 +62,9 @@ public:		// User declarations
 				kl[i] += 'A' - 'a';
 		}
 		
-		int j = 0,j = 0;;
+		int j = 0,i = 0;
 
-		for(j = 0; i < delka_n+1; i++){
+		for(i = 0; i < delka_n+1; i++){
 
 			if(znak_n[i] >= 'a' && znak_n[i] <= 'z')
 				znak_n[i] += 'A' - 'a';
@@ -72,7 +72,7 @@ public:		// User declarations
 			if(znak_n[i] < 'A' || znak_n[i] > 'Z')
 				continue;
 
-		  	znak_s[i] += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
+		  	znak_s[i] += (znak_n[i] + kl[0] - 2*'A')% 26 + 'A';
 
 			if(j<klic.Length())
 				j++;
@@ -80,7 +80,8 @@ public:		// User declarations
 				j=0;    
 		
 		}
-
+		
+	
 		AnsiString sifrovany_text = znak_s;
 
 		return sifrovany_text;
