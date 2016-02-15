@@ -41,6 +41,8 @@ __published:	// IDE-managed Components
 	void __fastcall Otevt1Click(TObject *Sender);
 	void __fastcall BSifrovatClick(TObject *Sender);
 	void __fastcall BDesifrovatClick(TObject *Sender);
+	void __fastcall ifrovn1Click(TObject *Sender);
+	void __fastcall Deifrovat1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
@@ -76,7 +78,7 @@ public:		// User declarations
 		int delka_n = znak_n.length();
 		int delka_k = kl.length();
 
-		string sifrovane;
+		string desifrovane;
 
 		for(int i = 0; i < delka_k; i++){
 			if(kl[i] >= 'a' && kl[i] <= 'z')
@@ -90,13 +92,13 @@ public:		// User declarations
 			if(znak_n[i] >= 'a' && zn <= 'z')
 				znak_n[i] += 'A' - 'a';
 
-			sifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
+			desifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
 
 		    j = (j+1)%delka_k;
 
 		}
 
-		return sifrovane.c_str();
+		return desifrovane.c_str();
 	}
 };
 //---------------------------------------------------------------------------

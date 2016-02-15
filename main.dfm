@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 0
   BorderStyle = bsSingle
   Caption = 'Vigenerova '#353'ifra'
-  ClientHeight = 432
+  ClientHeight = 433
   ClientWidth = 728
   Color = 3915769
   Font.Charset = DEFAULT_CHARSET
@@ -98,9 +98,11 @@ object Form2: TForm2
     end
     object ifrovn1: TMenuItem
       Caption = #352'ifrovat'
+      OnClick = ifrovn1Click
     end
     object Deifrovat1: TMenuItem
       Caption = 'De'#353'ifrovat'
+      OnClick = Deifrovat1Click
     end
   end
   object OpenDialog: TOpenDialog

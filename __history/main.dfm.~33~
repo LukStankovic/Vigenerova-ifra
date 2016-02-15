@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 0
   BorderStyle = bsSingle
   Caption = 'Vigenerova '#353'ifra'
-  ClientHeight = 432
+  ClientHeight = 452
   ClientWidth = 728
   Color = 3915769
   Font.Charset = DEFAULT_CHARSET
@@ -48,6 +48,7 @@ object Form2: TForm2
     Height = 25
     Caption = #352'ifrovat -->'
     TabOrder = 2
+    OnClick = BSifrovatClick
   end
   object BDesifrovat: TButton
     Left = 287
@@ -56,9 +57,10 @@ object Form2: TForm2
     Height = 25
     Caption = '<-- De'#353'ifrovat'
     TabOrder = 3
+    OnClick = BDesifrovatClick
   end
   object MainMenu1: TMainMenu
-    Left = 248
+    Left = 288
     Top = 16
     object Soubor1: TMenuItem
       Caption = 'Soubor'
@@ -78,10 +80,12 @@ object Form2: TForm2
       object OtevritKSifrovani: TMenuItem
         Caption = 'Otev'#345#237't k '#353'ifrov'#225'n'#237
         ShortCut = 16463
+        OnClick = OtevritKSifrovaniClick
       end
       object Otevt1: TMenuItem
         Caption = 'Otev'#345#237't k de'#353'ifrov'#225'n'#237
         ShortCut = 49231
+        OnClick = Otevt1Click
       end
       object N1: TMenuItem
         Caption = '-'
@@ -94,18 +98,20 @@ object Form2: TForm2
     end
     object ifrovn1: TMenuItem
       Caption = #352'ifrovat'
+      OnClick = ifrovn1Click
     end
     object Deifrovat1: TMenuItem
       Caption = 'De'#353'ifrovat'
+      OnClick = Deifrovat1Click
     end
   end
   object OpenDialog: TOpenDialog
-    Left = 280
+    Left = 328
     Top = 16
   end
   object SaveDialog: TSaveDialog
-    FileName = 'sifrovane.txt'
-    Left = 312
+    DefaultExt = 'txt'
+    Left = 368
     Top = 16
   end
 end
