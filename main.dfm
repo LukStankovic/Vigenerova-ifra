@@ -57,6 +57,7 @@ object Form2: TForm2
     Height = 25
     Caption = '<-- De'#353'ifrovat'
     TabOrder = 3
+    OnClick = BDesifrovatClick
   end
   object MainMenu1: TMainMenu
     Left = 288

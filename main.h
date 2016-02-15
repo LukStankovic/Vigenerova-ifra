@@ -40,6 +40,7 @@ __published:	// IDE-managed Components
 	void __fastcall OtevritKSifrovaniClick(TObject *Sender);
 	void __fastcall Otevt1Click(TObject *Sender);
 	void __fastcall BSifrovatClick(TObject *Sender);
+	void __fastcall BDesifrovatClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
@@ -63,6 +64,33 @@ public:		// User declarations
 				znak_n[i] += 'A' - 'a';
 
 			sifrovane += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
+
+		    j = (j+1)%delka_k;
+
+		}
+
+		return sifrovane.c_str();
+	}
+
+	AnsiString desifrovat(string kl, string znak_n){
+		int delka_n = znak_n.length();
+		int delka_k = kl.length();
+
+		string sifrovane;
+
+		for(int i = 0; i < delka_k; i++){
+			if(kl[i] >= 'a' && kl[i] <= 'z')
+				kl[i] += 'A' - 'a';
+		}
+		int j = 0;
+		for(int i = 0,j = 0; i < delka_n; i++){
+
+			char zn = znak_n[i];
+
+			if(znak_n[i] >= 'a' && zn <= 'z')
+				znak_n[i] += 'A' - 'a';
+
+			sifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
 
 		    j = (j+1)%delka_k;
 

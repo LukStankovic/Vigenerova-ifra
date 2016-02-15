@@ -62,7 +62,25 @@ void __fastcall TForm2::BSifrovatClick(TObject *Sender)
 	//uložení klíèe
 	klic = LEKlic->Text;
 
-    MSifrovane->Lines->Clear();
+	MSifrovane->Lines->Clear();
 	MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm2::BDesifrovatClick(TObject *Sender)
+{
+	//INICIALIZACE TEXTÙ
+	AnsiString klic = "",nesifrovany_text = "",sifrovany_text = "";
+	//poèet øádkù v memu
+	int pocet_radku = MSifrovane->Lines->Count;
+
+	//uložení textu z mema
+	for(int i = 0; i<pocet_radku; i++)
+		sifrovany_text += MSifrovane->Lines->Strings[i];
+	//uložení klíèe
+	klic = LEKlic->Text;
+
+	MDesifrovane->Lines->Clear();
+	MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+}
+//---------------------------------------------------------------------------
+
