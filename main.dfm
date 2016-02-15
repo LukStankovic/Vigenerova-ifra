@@ -11,10 +11,11 @@ object Form2: TForm2
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object MNesifrovane: TMemo
+  object MDesifrovane: TMemo
     Left = 0
     Top = 0
     Width = 249
@@ -38,7 +39,7 @@ object Form2: TForm2
     Width = 249
     Height = 433
     BorderStyle = bsNone
-    TabOrder = 2
+    TabOrder = 4
   end
   object BSifrovat: TButton
     Left = 287
@@ -46,7 +47,7 @@ object Form2: TForm2
     Width = 153
     Height = 25
     Caption = #352'ifrovat -->'
-    TabOrder = 3
+    TabOrder = 2
   end
   object BDesifrovat: TButton
     Left = 287
@@ -54,6 +55,59 @@ object Form2: TForm2
     Width = 153
     Height = 25
     Caption = '<-- De'#353'ifrovat'
-    TabOrder = 4
+    TabOrder = 3
+  end
+  object MainMenu1: TMainMenu
+    Left = 248
+    Top = 16
+    object Soubor1: TMenuItem
+      Caption = 'Soubor'
+      object Ulozit1: TMenuItem
+        Caption = 'Ulo'#382'it '#353'ifrovan'#233
+        ShortCut = 16467
+        OnClick = Ulozit1Click
+      end
+      object Uloitdeifrovan1: TMenuItem
+        Caption = 'Ulo'#382'it de'#353'ifrovan'#233
+        ShortCut = 49235
+        OnClick = Uloitdeifrovan1Click
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object OtevritKSifrovani: TMenuItem
+        Caption = 'Otev'#345#237't k '#353'ifrov'#225'n'#237
+        ShortCut = 16463
+        OnClick = OtevritKSifrovaniClick
+      end
+      object Otevt1: TMenuItem
+        Caption = 'Otev'#345#237't k de'#353'ifrov'#225'n'#237
+        ShortCut = 49231
+        OnClick = Otevt1Click
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Ukonit1: TMenuItem
+        Caption = 'Ukon'#269'it'
+        ShortCut = 16471
+        OnClick = Ukonit1Click
+      end
+    end
+    object ifrovn1: TMenuItem
+      Caption = #352'ifrovat'
+    end
+    object Deifrovat1: TMenuItem
+      Caption = 'De'#353'ifrovat'
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Left = 280
+    Top = 16
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = 'txt'
+    Left = 312
+    Top = 16
   end
 end
