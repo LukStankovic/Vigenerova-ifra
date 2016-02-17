@@ -121,3 +121,40 @@ void __fastcall TForm2::Deifrovat1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+void __fastcall TForm2::V1Click(TObject *Sender)
+{
+	MDesifrovane->Lines->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Vymazat1Click(TObject *Sender)
+{
+	MSifrovane->Lines->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::ifrovan1Click(TObject *Sender)
+{
+	MSifrovane->Lines->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Neiforvan1Click(TObject *Sender)
+{
+	MDesifrovane->Lines->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Oboj1Click(TObject *Sender)
+{
+	MSifrovane->Lines->Clear();
+    MDesifrovane->Lines->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Kl1Click(TObject *Sender)
+{
+	LEKlic->Text = "";	
+}
+//---------------------------------------------------------------------------
+

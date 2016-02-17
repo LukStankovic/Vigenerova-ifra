@@ -47,6 +47,8 @@ __published:	// IDE-managed Components
 	void __fastcall BDesifrovatClick(TObject *Sender);
 	void __fastcall ifrovn1Click(TObject *Sender);
 	void __fastcall Deifrovat1Click(TObject *Sender);
+	void __fastcall V1Click(TObject *Sender);
+	void __fastcall Vymazat1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
@@ -74,10 +76,10 @@ public:		// User declarations
 				continue;
 			}
 
-			if(znak_n[i] < 'A' && znak_n[i] < 'Z')
+			if(znak_n[i] >= 'A' && znak_n[i] <= 'Z'){
 				sifrovane += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
-
-		    j = (j+1)%delka_k;
+				j = (j+1)%delka_k;
+			}
 
 		}
 
@@ -105,10 +107,10 @@ public:		// User declarations
 				continue;
 			}
 
-			desifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
-
-			j = (j+1)%delka_k;
-			
+			if(znak_n[i] >= 'A' && znak_n[i] <= 'Z'){
+				desifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
+				j = (j+1)%delka_k;
+			}
 
 		}
 

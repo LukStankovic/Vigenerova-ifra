@@ -106,6 +106,31 @@ object Form2: TForm2
       Caption = 'De'#353'ifrovat'
       OnClick = Deifrovat1Click
     end
+    object Vymazat2: TMenuItem
+      Caption = 'Vymazat'
+      object ifrovan1: TMenuItem
+        Caption = #352'ifrovan'#233
+        OnClick = ifrovan1Click
+      end
+      object Neiforvan1: TMenuItem
+        Caption = 'Ne'#353'iforvan'#233
+        OnClick = Neiforvan1Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Oboj1: TMenuItem
+        Caption = 'Oboj'#237
+        OnClick = Oboj1Click
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object Kl1: TMenuItem
+        Caption = 'Kl'#237#269
+        OnClick = Kl1Click
+      end
+    end
   end
   object OpenDialog: TOpenDialog
     Left = 328
@@ -121,6 +146,7 @@ object Form2: TForm2
     Top = 400
     object V1: TMenuItem
       Caption = 'Vymazat'
+      OnClick = V1Click
     end
   end
   object PopUpSiifrovane: TPopupMenu
@@ -128,6 +154,7 @@ object Form2: TForm2
     Top = 392
     object Vymazat1: TMenuItem
       Caption = 'Vymazat'
+      OnClick = Vymazat1Click
     end
   end
 end
