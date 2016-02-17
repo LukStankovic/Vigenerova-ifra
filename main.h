@@ -45,6 +45,8 @@ __published:	// IDE-managed Components
 	TMenuItem *Oboj1;
 	TMenuItem *N4;
 	TMenuItem *Kl1;
+	TMenuItem *Vygenerovatnhodnkl1;
+	TPanel *Panel1;
 	void __fastcall Ukonit1Click(TObject *Sender);
 	void __fastcall Ulozit1Click(TObject *Sender);
 	void __fastcall Uloitdeifrovan1Click(TObject *Sender);
@@ -60,6 +62,7 @@ __published:	// IDE-managed Components
 	void __fastcall Neiforvan1Click(TObject *Sender);
 	void __fastcall Oboj1Click(TObject *Sender);
 	void __fastcall Kl1Click(TObject *Sender);
+	void __fastcall Vygenerovatnhodnkl1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);

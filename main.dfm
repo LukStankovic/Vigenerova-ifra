@@ -20,46 +20,61 @@ object Form2: TForm2
     Top = 0
     Width = 249
     Height = 433
+    Align = alLeft
     BorderStyle = bsNone
     PopupMenu = PopUpNesifrovane
     TabOrder = 0
   end
-  object LEKlic: TLabeledEdit
-    Left = 287
-    Top = 160
-    Width = 153
-    Height = 21
-    EditLabel.Width = 58
-    EditLabel.Height = 13
-    EditLabel.Caption = #352'ifrovac'#237' kl'#237#269
-    TabOrder = 1
-  end
   object MSifrovane: TMemo
-    Left = 480
+    Left = 479
     Top = 0
     Width = 249
     Height = 433
+    Align = alRight
     BorderStyle = bsNone
     PopupMenu = PopUpSiifrovane
-    TabOrder = 4
+    TabOrder = 1
   end
-  object BSifrovat: TButton
-    Left = 287
-    Top = 200
-    Width = 153
-    Height = 25
-    Caption = #352'ifrovat -->'
+  object Panel1: TPanel
+    Left = 249
+    Top = 0
+    Width = 230
+    Height = 433
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 3915769
     TabOrder = 2
-    OnClick = BSifrovatClick
-  end
-  object BDesifrovat: TButton
-    Left = 287
-    Top = 248
-    Width = 153
-    Height = 25
-    Caption = '<-- De'#353'ifrovat'
-    TabOrder = 3
-    OnClick = BDesifrovatClick
+    ExplicitLeft = 248
+    ExplicitWidth = 233
+    object LEKlic: TLabeledEdit
+      Left = 40
+      Top = 160
+      Width = 153
+      Height = 21
+      EditLabel.Width = 58
+      EditLabel.Height = 13
+      EditLabel.Caption = #352'ifrovac'#237' kl'#237#269
+      TabOrder = 0
+    end
+    object BSifrovat: TButton
+      Left = 40
+      Top = 205
+      Width = 153
+      Height = 25
+      Caption = #352'ifrovat -->'
+      TabOrder = 1
+      OnClick = BSifrovatClick
+    end
+    object BDesifrovat: TButton
+      Left = 40
+      Top = 248
+      Width = 153
+      Height = 25
+      Align = alCustom
+      Caption = '<-- De'#353'ifrovat'
+      TabOrder = 2
+      OnClick = BDesifrovatClick
+    end
   end
   object MainMenu1: TMainMenu
     Left = 288
@@ -130,6 +145,10 @@ object Form2: TForm2
         Caption = 'Kl'#237#269
         OnClick = Kl1Click
       end
+    end
+    object Vygenerovatnhodnkl1: TMenuItem
+      Caption = 'Vygenerovat n'#225'hodn'#253' kl'#237#269
+      OnClick = Vygenerovatnhodnkl1Click
     end
   end
   object OpenDialog: TOpenDialog

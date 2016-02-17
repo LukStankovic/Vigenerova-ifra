@@ -1,9 +1,11 @@
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
+#include <time.h>
 #pragma hdrstop
 
 #include "main.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -67,6 +69,7 @@ void __fastcall TForm2::BSifrovatClick(TObject *Sender)
 		MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
 	}
 	catch(...){
+    	LEKlic->SetFocus();
 		ShowMessage("Zadej klíè!");
 	}
 }
@@ -85,7 +88,13 @@ void __fastcall TForm2::BDesifrovatClick(TObject *Sender)
 	klic = LEKlic->Text;
 
 	MDesifrovane->Lines->Clear();
-	MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+	try{
+		MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+	}
+	catch(...){
+		LEKlic->SetFocus();
+		ShowMessage("Zadej klíè!");
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -111,6 +120,7 @@ void __fastcall TForm2::ifrovn1Click(TObject *Sender)
 		MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
 	}
 	catch(...){
+		LEKlic->SetFocus();
 		ShowMessage("Zadej klíè!");
 	}
 
@@ -133,7 +143,8 @@ void __fastcall TForm2::Deifrovat1Click(TObject *Sender)
 
 	MDesifrovane->Lines->Clear();
 
-	MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+	try{
+		MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
 	}
 	catch(...){
 		ShowMessage("Zadej klíè!");
@@ -175,7 +186,24 @@ void __fastcall TForm2::Oboj1Click(TObject *Sender)
 
 void __fastcall TForm2::Kl1Click(TObject *Sender)
 {
-	LEKlic->Text = "";	
+	LEKlic->Text = "";
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm2::Vygenerovatnhodnkl1Click(TObject *Sender)
+{
+	LEKlic->Text = "";
+	
+	char *klic = new char[10];
+	char k;
+	for(int i = 0;i<10;i++){
+		k = rand()%26+65;
+		if(k > 'A' && k < 'Z')
+			klic[i] = k;
+	}
+	for(int i = 0;i<10;i++)
+		LEKlic->Text = LEKlic->Text + klic[i];
 }
 //---------------------------------------------------------------------------
 

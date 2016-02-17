@@ -38,6 +38,15 @@ __published:	// IDE-managed Components
 	TPopupMenu *PopUpSiifrovane;
 	TMenuItem *V1;
 	TMenuItem *Vymazat1;
+	TMenuItem *Vymazat2;
+	TMenuItem *ifrovan1;
+	TMenuItem *Neiforvan1;
+	TMenuItem *N3;
+	TMenuItem *Oboj1;
+	TMenuItem *N4;
+	TMenuItem *Kl1;
+	TMenuItem *Vygenerovatnhodnkl1;
+	TPanel *Panel1;
 	void __fastcall Ukonit1Click(TObject *Sender);
 	void __fastcall Ulozit1Click(TObject *Sender);
 	void __fastcall Uloitdeifrovan1Click(TObject *Sender);
@@ -47,6 +56,12 @@ __published:	// IDE-managed Components
 	void __fastcall BDesifrovatClick(TObject *Sender);
 	void __fastcall ifrovn1Click(TObject *Sender);
 	void __fastcall Deifrovat1Click(TObject *Sender);
+	void __fastcall V1Click(TObject *Sender);
+	void __fastcall Vymazat1Click(TObject *Sender);
+	void __fastcall ifrovan1Click(TObject *Sender);
+	void __fastcall Neiforvan1Click(TObject *Sender);
+	void __fastcall Oboj1Click(TObject *Sender);
+	void __fastcall Kl1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
@@ -105,8 +120,10 @@ public:		// User declarations
 				continue;
 			}
 
-			
-
+			if(znak_n[i] >= 'A' && znak_n[i] <= 'Z'){
+				desifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
+				j = (j+1)%delka_k;
+			}
 
 		}
 

@@ -1,9 +1,11 @@
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
+#include <time.h>
 #pragma hdrstop
 
 #include "main.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -14,6 +16,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 {
 	OpenDialog->Filter = "Textové soubory (*.txt)";
 	SaveDialog->Filter = "Textové soubory (*.txt)";
+	srand(time(NULL));
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::Ukonit1Click(TObject *Sender)
@@ -184,7 +187,22 @@ void __fastcall TForm2::Oboj1Click(TObject *Sender)
 
 void __fastcall TForm2::Kl1Click(TObject *Sender)
 {
-	LEKlic->Text = "";	
+	LEKlic->Text = "";
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm2::Vygenerovatnhodnkl1Click(TObject *Sender)
+{
+	LEKlic->Text = "";
+	
+	char *klic = new char[10];
+	for(int i = 0;i<10;i++){
+		klic[i] = rand()%25+65;
+	}
+  	for(int i = 0;i<10;i++)
+		LEKlic->Text = LEKlic->Text + klic[i];
+
 }
 //---------------------------------------------------------------------------
 

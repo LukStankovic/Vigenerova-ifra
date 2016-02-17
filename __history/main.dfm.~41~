@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 0
   BorderStyle = bsSingle
   Caption = 'Vigenerova '#353'ifra'
-  ClientHeight = 432
+  ClientHeight = 433
   ClientWidth = 728
   Color = 3915769
   Font.Charset = DEFAULT_CHARSET
@@ -21,6 +21,7 @@ object Form2: TForm2
     Width = 249
     Height = 433
     BorderStyle = bsNone
+    PopupMenu = PopUpNesifrovane
     TabOrder = 0
   end
   object LEKlic: TLabeledEdit
@@ -39,6 +40,7 @@ object Form2: TForm2
     Width = 249
     Height = 433
     BorderStyle = bsNone
+    PopupMenu = PopUpSiifrovane
     TabOrder = 4
   end
   object BSifrovat: TButton
@@ -98,9 +100,36 @@ object Form2: TForm2
     end
     object ifrovn1: TMenuItem
       Caption = #352'ifrovat'
+      OnClick = ifrovn1Click
     end
     object Deifrovat1: TMenuItem
       Caption = 'De'#353'ifrovat'
+      OnClick = Deifrovat1Click
+    end
+    object Vymazat2: TMenuItem
+      Caption = 'Vymazat'
+      object ifrovan1: TMenuItem
+        Caption = #352'ifrovan'#233
+        OnClick = ifrovan1Click
+      end
+      object Neiforvan1: TMenuItem
+        Caption = 'Ne'#353'iforvan'#233
+        OnClick = Neiforvan1Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Oboj1: TMenuItem
+        Caption = 'Oboj'#237
+        OnClick = Oboj1Click
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object Kl1: TMenuItem
+        Caption = 'Kl'#237#269
+        OnClick = Kl1Click
+      end
     end
   end
   object OpenDialog: TOpenDialog
@@ -111,5 +140,21 @@ object Form2: TForm2
     DefaultExt = 'txt'
     Left = 368
     Top = 16
+  end
+  object PopUpNesifrovane: TPopupMenu
+    Left = 104
+    Top = 400
+    object V1: TMenuItem
+      Caption = 'Vymazat'
+      OnClick = V1Click
+    end
+  end
+  object PopUpSiifrovane: TPopupMenu
+    Left = 592
+    Top = 392
+    object Vymazat1: TMenuItem
+      Caption = 'Vymazat'
+      OnClick = Vymazat1Click
+    end
   end
 end
