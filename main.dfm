@@ -21,6 +21,7 @@ object Form2: TForm2
     Width = 249
     Height = 433
     BorderStyle = bsNone
+    PopupMenu = PopUpNesifrovane
     TabOrder = 0
   end
   object LEKlic: TLabeledEdit
@@ -39,6 +40,7 @@ object Form2: TForm2
     Width = 249
     Height = 433
     BorderStyle = bsNone
+    PopupMenu = PopUpSiifrovane
     TabOrder = 4
   end
   object BSifrovat: TButton
@@ -113,5 +115,19 @@ object Form2: TForm2
     DefaultExt = 'txt'
     Left = 368
     Top = 16
+  end
+  object PopUpNesifrovane: TPopupMenu
+    Left = 104
+    Top = 400
+    object V1: TMenuItem
+      Caption = 'Vymazat'
+    end
+  end
+  object PopUpSiifrovane: TPopupMenu
+    Left = 592
+    Top = 392
+    object Vymazat1: TMenuItem
+      Caption = 'Vymazat'
+    end
   end
 end

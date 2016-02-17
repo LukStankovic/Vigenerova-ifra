@@ -34,6 +34,10 @@ __published:	// IDE-managed Components
 	TMenuItem *N2;
 	TOpenDialog *OpenDialog;
 	TSaveDialog *SaveDialog;
+	TPopupMenu *PopUpNesifrovane;
+	TPopupMenu *PopUpSiifrovane;
+	TMenuItem *V1;
+	TMenuItem *Vymazat1;
 	void __fastcall Ukonit1Click(TObject *Sender);
 	void __fastcall Ulozit1Click(TObject *Sender);
 	void __fastcall Uloitdeifrovan1Click(TObject *Sender);
@@ -62,12 +66,18 @@ public:		// User declarations
 
 			char zn = znak_n[i];
 
-			if(znak_n[i] >= 'a' && zn <= 'z')
+			if(znak_n[i] >= 'a' && znak_n[i] <= 'z')
 				znak_n[i] += 'A' - 'a';
 
-			sifrovane += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
+			if(znak_n[i] == ' '){
+				sifrovane += ' ';
+				continue;
+			}
 
-		    j = (j+1)%delka_k;
+			if(znak_n[i] >= 'A' && znak_n[i] <= 'Z'){
+				sifrovane += (znak_n[i] + kl[j] - 2*'A')% 26 + 'A';
+				j = (j+1)%delka_k;
+			}
 
 		}
 
@@ -87,14 +97,16 @@ public:		// User declarations
 		int j = 0;
 		for(int i = 0,j = 0; i < delka_n; i++){
 
-			char zn = znak_n[i];
-
-			if(znak_n[i] >= 'a' && zn <= 'z')
+			if(znak_n[i] >= 'a' && znak_n[i] <= 'z')
 				znak_n[i] += 'A' - 'a';
 
-			desifrovane += (znak_n[i] - kl[j] + 2*'A')% 26 + 'A';
+			if(znak_n[i] == ' '){
+				desifrovane += ' ';
+				continue;
+			}
 
-		    j = (j+1)%delka_k;
+			
+
 
 		}
 
