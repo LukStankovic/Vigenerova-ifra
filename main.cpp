@@ -63,7 +63,13 @@ void __fastcall TForm2::BSifrovatClick(TObject *Sender)
 	klic = LEKlic->Text;
 
 	MSifrovane->Lines->Clear();
-	MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
+	try{
+		MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
+	}
+	catch(...){
+    	LEKlic->SetFocus();
+		ShowMessage("Zadej klíè!");
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::BDesifrovatClick(TObject *Sender)
@@ -80,12 +86,19 @@ void __fastcall TForm2::BDesifrovatClick(TObject *Sender)
 	klic = LEKlic->Text;
 
 	MDesifrovane->Lines->Clear();
-	MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+	try{
+		MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+	}
+	catch(...){
+		LEKlic->SetFocus();
+		ShowMessage("Zadej klíè!");
+	}
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::ifrovn1Click(TObject *Sender)
 {
+
 	//INICIALIZACE TEXTÙ
 	AnsiString klic = "",nesifrovany_text = "",sifrovany_text = "";
 	//poèet øádkù v memu
@@ -94,11 +107,22 @@ void __fastcall TForm2::ifrovn1Click(TObject *Sender)
 	//uložení textu z mema
 	for(int i = 0; i<pocet_radku; i++)
 		nesifrovany_text += MDesifrovane->Lines->Strings[i];
+
+
 	//uložení klíèe
 	klic = LEKlic->Text;
 
 	MSifrovane->Lines->Clear();
-	MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
+
+	try{
+		MSifrovane->Lines->Insert(0,sifrovat(klic.c_str(),nesifrovany_text.c_str()));
+	}
+	catch(...){
+		LEKlic->SetFocus();
+		ShowMessage("Zadej klíè!");
+	}
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -116,7 +140,13 @@ void __fastcall TForm2::Deifrovat1Click(TObject *Sender)
 	klic = LEKlic->Text;
 
 	MDesifrovane->Lines->Clear();
-	MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+
+	try{
+		MDesifrovane->Lines->Insert(0,desifrovat(klic.c_str(),sifrovany_text.c_str()));
+	}
+	catch(...){
+		ShowMessage("Zadej klíè!");
+	}
 }
 //---------------------------------------------------------------------------
 
